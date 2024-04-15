@@ -1,0 +1,305 @@
+@media (max-width:430px){
+
+}
+
+a{
+    text-decoration: none;
+}
+
+ul::marker{
+    display: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+body{
+    margin: 0;
+    grid-template-areas: 
+    "header header header"
+    "nav nav nav"
+    "main main main"
+    "footer footer footer"
+    ;
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+
+}
+
+
+
+/************************************** Partie Header ****************************************/
+
+header{
+    grid-area: header;
+    height: 5em;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+header h1,header h3{
+    padding: 4em;
+}
+
+/************************************** Partie Navigation ****************************************/
+
+nav{
+    background-color: grey;
+    grid-area: nav;
+    grid-column: 1/4;
+    height: 2em;
+    display: flex;
+    background-color: grey;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
+    padding-inline-start: 0;
+    column-gap: 2em;
+    height: inherit;
+    text-align: center;
+}
+
+nav ul li{
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+    text-align: center;
+    width: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+nav ul li a{
+    color: white;
+}
+
+nav ul li:hover{
+    background-color: rgb(42, 66, 177);
+}
+
+/************************************** Partie Principale ****************************************/
+
+main{
+    grid-area: main;
+    grid-template-areas: 
+    "intro intro"
+    "card card"
+    ;
+}
+
+/************************************** Partie Introduction ****************************************/
+
+main section.introduction {
+    grid-area: intro;
+    grid-template-areas: "text text image";
+    background-color: #4ab5f3;
+    display: grid;
+    align-items: center;
+    padding-inline-start: 10em;
+    padding-inline-end: 2em;
+    overflow: overlay;   
+}
+
+main .introduction .introText {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    font-size: 1em;
+    justify-content: space-around;
+}
+
+main .introduction .introText h4{
+    font-size: 1em; 
+}
+main .introduction .introText .underline-decoration{
+    background-color: yellow;
+    height: .2em;
+    width: 10%;
+}
+main .introduction .introText hr{
+    margin-block-start: 0;
+    margin-inline-start: 0;
+    background-color: yellow;
+    width: 10%;
+    height: .2em;
+    border: none;
+}
+main .introduction .introText p {
+    width: 75%;
+    height: 14em;
+    font-size: 70%;
+}
+
+main .introduction .introImage{
+    grid-area: image;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .introduction .introImage img{
+    width: 75%;
+}
+
+
+
+/************************************** Partie Grid ****************************************/
+
+
+.grid-1 {
+    grid-template-columns: 2fr 1fr;
+    display: grid;
+    padding-inline: 1em;
+    overflow: clip;
+    
+}
+
+
+
+.cardFrame img{
+    width: 100%;
+}
+
+
+
+/************************************** Grid 1 ****************************************/
+
+.grid-1 .card-grid-1 {
+    gap: 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3em;
+}
+
+.grid-1 .card-grid-1 .cardFrame{
+    display: inline-block;
+    padding: 2em;
+    border-radius: 10%;
+    box-shadow: 0 0 1em 0em black;
+    position: relative;
+}
+
+.grid-1 .card-grid-1 .cardFrame .cardText{
+    position: absolute;
+    background-color: #4ab5f3;
+    opacity: 30%;
+    border-radius: 10%;
+    box-shadow: 0 0 1em black;
+    padding: 1em;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    top: 40%; 
+    left: 0;
+    right: 0;
+
+}
+
+
+
+
+
+/************************************** Grid 2 *****************************************/
+
+.grid-1 .card-grid-2 .cardFrame{
+    width: 10em;
+    text-align: center;
+    display: inline-block;
+    padding: 2em;
+    border-radius: 10%;
+    box-shadow: 0 0 0.3em 0.1em black;
+    position: relative;
+}
+
+.grid-1 .card-grid-2{
+    margin-top: 2em;
+}
+.grid-1 .card-grid-2 h3 .underline-decoration{
+    background-color: yellow;
+    height: .2em;
+
+}
+
+.grid-1 .card-grid-2 .box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 0.5em;
+    justify-items: center;
+}
+
+.grid-1 .card-grid-2 .box .cardFrame:hover{
+    background-color: burlywood;
+}
+
+
+/************************************** Partie Footer ****************************************/
+
+footer{
+    grid-area: footer;
+    background-color:dimgrey;
+    padding-bottom: 1em;
+    
+}
+
+footer p{
+    color: white;
+    font-weight: bold;
+}
+
+footer a{
+    color: #4ab5f3;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+.map{
+    height: 16em;
+}
+
+
+
+footer .miscLinks div ul{
+    padding-inline-start: 0;
+}
+
+.miscLinks{
+    padding-top: 1em;
+    padding-inline: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.socialLinks section{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.socialLinks section p{
+    margin-block-end: 0em;
+}
